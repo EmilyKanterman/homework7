@@ -24,6 +24,7 @@
 			margin-bottom: 5px;
 		}
 
+
 		button.play{
 			background:url(images/play.png);
 			background-size:20%;
@@ -40,7 +41,6 @@
 			padding-left:5%; 
 		}
 
-		/*You can not change anything in the style tag other than to add images for the buttons. */
 </style>
 </head>
 <body> 
@@ -76,10 +76,8 @@
 
 
 	<script> 
-		// You may only change code in the script tag.
-		// You can not change the HTML in the file.
 
-
+// CHANGE THINGS HERE!
 	var vid=document.querySelector("#myVideo");
 
 	function playVid() { 
@@ -98,13 +96,13 @@
 	} 
 
 	function slowSpeed() {
-		vid.playbackrate=vid.playbackrate/2;
+		vid.playbackRate=vid.playbackrate/2;
 		console.log("Speed is " + vid.playbackrate);
 		// Slow the vido speed by half and log the new rate to the console. 
 	} 
 
 	function increaseSpeed() {
-		vid.playbackrate=vid.playbackrate**2;
+		vid.playbackRate=vid.playbackrate*2;
 		console.log("Speed is " + vid.playbackrate);
 		// Double the video speen and log the new rate to the console. 
 	} 
@@ -133,6 +131,7 @@
 	}
 
 	volumeSlider.oninput = function() {
+		document.querySelector('#volume').innerHTML=volumeSlider.value
 		vid.volume=this.value/100;
 		console.log("The volume is " + this.value);
 		document.querySelector('#volume').innerHTML= this.value + "%";
@@ -146,17 +145,19 @@
 	       
 	function gray() { 
 		console.log("This is grayscale")
-		vid.style.filter='grayscale(1)';
-		// Utilize the existing grayscale class.
+		vid.classList.add('grayscale');
 
+		// Utilize the existing grayscale class.
 	}
 
 	function color() {
 		console.log("This is in color")
-		vid.style.filter='grayscale(0)';
-		// Remove the existing grayscale class.
+		vid.classList.remove('grayscale');
 
+		// Remove the existing grayscale class.
 	}
+
+	// https://alligator.io/js/classlist/ found classList stuff for adding and removing
 
 	// Not sure if we can test for this??? 
 	function random(){
@@ -173,3 +174,5 @@
 </main>
 </body> 
 </html>
+
+
