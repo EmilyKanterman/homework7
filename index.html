@@ -84,7 +84,7 @@
 		console.log("Play Video");
 		vid.play();
 		document.getElementById('volume').innerHTML=volumeSlider.value + '%';
-		vid.playbackrate=1;
+		vid.playbackRate=1;
 	}
 		// Play the video and update the volume.
 
@@ -96,14 +96,14 @@
 	} 
 
 	function slowSpeed() {
-		vid.playbackRate=vid.playbackrate/2;
-		console.log("Speed is " + vid.playbackrate);
+		vid.playbackRate=vid.playbackRate/2;
+		console.log("Speed is " + vid.playbackRate);
 		// Slow the vido speed by half and log the new rate to the console. 
 	} 
 
 	function increaseSpeed() {
-		vid.playbackRate=vid.playbackrate*2;
-		console.log("Speed is " + vid.playbackrate);
+		vid.playbackRate=vid.playbackRate*2;
+		console.log("Speed is " + vid.playbackRate);
 		// Double the video speen and log the new rate to the console. 
 	} 
 
